@@ -1,26 +1,66 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import LoginForm from "./Component/LoginForm";
 
 function App() {
-  // const  [username , setUsername]=useState("");
+   const  [values , setValues]=useState({
+    username:"",
+    email:"",
+    password:"",
+    confirPassword:"",
 
+  });
+  const inputs=[{
+    id:1,
+    name:"username",
+    type:"text",
+    placeholder:"Username",
+    label:"Username"
+  },
+  {
+    id:2,
+    name:"email",
+    type:"text",
+    placeholder:"Email",
+    label:"Email",
+  },
+  {
+    id:3,
+    name:"password",
+    type:"password",
+    placeholder:"password",
+    label:"Password"
+  },
+  {
+    id:4,
+    name:"confirmPassword",
+    type:"password",
+    placeholder:"ConfirmPassword",
+    label:"ConfirmPassword"
+  }
+]
   console.log("re-rendered")
 
 const handleSubmit=(e)=>{
   e.preventDefault();
-  const data = new FormData(e.target)
-  console.log(Object.fromEntries(data.entries()))
 
 }
 
+const onChange =(e)=>{
+  setValues({...values , [e.target.name]: e.target.value})
+}
+
+console.log(values)
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
-        <LoginForm name="username" placeholder="UserName"/>
-        <LoginForm name="email " placeholder="Email"/>
-        <LoginForm name="Password" placeholder="Password"/>
-        <LoginForm name="confirmPassword" placeholder="ConfirmPassword"/>
+        {inputs.map((input)=>(
+           <LoginForm key={input.id} {...input}
+            value={values[input.name]}
+            onChange={onChange}/>
+        ))}
+       
+        
         <button>submit</button>
         
       </form>

@@ -4,24 +4,26 @@ import LoginForm from "./Component/LoginForm";
 
 function App() {
   // const  [username , setUsername]=useState("");
-  const usernameRef=useRef();
+
+  console.log("re-rendered")
 
 const handleSubmit=(e)=>{
   e.preventDefault();
-  console.log(usernameRef);
+  const data = new FormData(e.target)
+  console.log(Object.fromEntries(data.entries()))
 
 }
 
   return (
     <div className="App">
-      <from onsubmit={handleSubmit}>
-        <LoginForm refer={usernameRef} placeholder="UserName"/>
-        <LoginForm placeholder="Email"/>
-        <LoginForm placeholder="Password"/>
-        <LoginForm placeholder="ConfirmPassword"/>
+      <form onSubmit={handleSubmit}>
+        <LoginForm name="username" placeholder="UserName"/>
+        <LoginForm name="email " placeholder="Email"/>
+        <LoginForm name="Password" placeholder="Password"/>
+        <LoginForm name="confirmPassword" placeholder="ConfirmPassword"/>
         <button>submit</button>
         
-      </from>
+      </form>
     </div>
   );
 }

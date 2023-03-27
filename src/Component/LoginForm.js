@@ -1,4 +1,4 @@
-import  "./loginForm.css"
+import  "./LoginForm.css"
 
 
 const LoginForm=(props)=>{
@@ -6,7 +6,8 @@ const LoginForm=(props)=>{
 
         <div className="loginForm">
             {/* <label>UserName</label> */}
-            <input ref={props.refer} placeholder={props.placeholder} />
+            <input name={props.name}
+             placeholder={props.placeholder} />
         </div>
     )
 }

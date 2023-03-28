@@ -54,13 +54,14 @@ console.log(values)
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
+        <h1>Login Form</h1>
         {inputs.map((input)=>(
            <LoginForm key={input.id} {...input}
             value={values[input.name]}
             onChange={onChange}/>
         ))}
        
-        
+  
         <button>submit</button>
         
       </form>

@@ -15,6 +15,7 @@ function App() {
     name:"username",
     type:"text",
     placeholder:"Username",
+    errorMessage:"username should be 3-16 character and shouldn't any special character!",
     label:"Username"
   },
   {
@@ -22,6 +23,7 @@ function App() {
     name:"email",
     type:"text",
     placeholder:"Email",
+    errorMessage:"It should be a valid email address!",
     label:"Email",
   },
   {
@@ -29,13 +31,16 @@ function App() {
     name:"password",
     type:"password",
     placeholder:"password",
+    errorMessage:"Password should be of 8-10 character and should include atleast oneletter , 1 number and 1 special character! ",
     label:"Password"
+    
   },
   {
     id:4,
     name:"confirmPassword",
     type:"password",
     placeholder:"ConfirmPassword",
+    errorMessage:"Password dont match",
     label:"ConfirmPassword"
   }
 ]

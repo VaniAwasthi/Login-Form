@@ -16,7 +16,9 @@ function App() {
     type:"text",
     placeholder:"Username",
     errorMessage:"username should be 3-16 character and shouldn't any special character!",
-    label:"Username"
+    label:"Username",
+    pattern:"^[A-za-z0-9]{3,16}$",
+    require:true,
   },
   {
     id:2,
@@ -25,6 +27,7 @@ function App() {
     placeholder:"Email",
     errorMessage:"It should be a valid email address!",
     label:"Email",
+    require:true
   },
   {
     id:3,
@@ -32,7 +35,9 @@ function App() {
     type:"password",
     placeholder:"password",
     errorMessage:"Password should be of 8-10 character and should include atleast oneletter , 1 number and 1 special character! ",
-    label:"Password"
+    label:"Password",
+    pattern:"(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}",
+    require:true,
     
   },
   {
@@ -41,7 +46,8 @@ function App() {
     type:"password",
     placeholder:"ConfirmPassword",
     errorMessage:"Password dont match",
-    label:"ConfirmPassword"
+    label:"ConfirmPassword",
+    require:true,
   }
 ]
   console.log("re-rendered")

@@ -36,7 +36,7 @@ function App() {
     placeholder:"password",
     errorMessage:"Password should be of 8-10 character and should include atleast oneletter , 1 number and 1 special character! ",
     label:"Password",
-    pattern:"(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}",
+    pattern:"^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$",
     require:true,
     
   },
@@ -47,6 +47,7 @@ function App() {
     placeholder:"ConfirmPassword",
     errorMessage:"Password dont match",
     label:"ConfirmPassword",
+    pattern:values.password,
     require:true,
   }
 ]
